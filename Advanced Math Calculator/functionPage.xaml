@@ -8,20 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="#FF232323">
+        <Grid Background="#FF232323" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="37*"/>
                 <ColumnDefinition Width="122*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions >
-                <RowDefinition Height ="*"/>
+                <RowDefinition Height ="50"/>
                 <RowDefinition Height ="Auto"/>
                 <RowDefinition Height ="3*"/>
                 <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="20"/>
 
             </Grid.RowDefinitions>
-            <TextBlock x:Name="title" Grid.Row="0" HorizontalAlignment="Center" Margin="10,32,10,31" TextWrapping="Wrap" VerticalAlignment="Center" Text="Function Calculator" FontSize="35" Grid.ColumnSpan="2" />
-
             <TextBox x:Name="equation"  Grid.Row="1" HorizontalAlignment="Stretch" Margin="57,11,66,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="auto" FontSize="25" TextChanging="equation_TextChanging" Grid.ColumnSpan="2" TextChanged="equation_TextChanged"/>
             <Button x:Name="go" Content="GO!" Grid.Row="1" HorizontalAlignment="Right" Margin="0,11,7,0" VerticalAlignment="Top" Click="go_Click" Height="45" Width="54" Grid.Column="1"/>
             <TextBlock x:Name="output" Grid.Row="2" HorizontalAlignment="Center" Margin="84.667,89.667,159,90.333" TextWrapping="Wrap" VerticalAlignment="Center" Text="" FontSize="30" Grid.Column="1" />

@@ -55,7 +55,7 @@ namespace Advanced_Math_Calculator
                 }
             }//parenAssist 
         }
-
+         
         string piconvert(string formula)
         {
             string stringpi = "3.141592653589793238462643";
