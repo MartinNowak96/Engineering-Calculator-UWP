@@ -32,6 +32,13 @@
                             <TextBlock x:Name="FunctionCalc" VerticalAlignment="Center" Text="Function Calculator" Foreground="White" FontSize="20" />
                         </StackPanel>
                     </ListBoxItem>
+                    <ListBoxItem x:Name="polarRectangular">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="polarShip"  Text="&#xE7E3;" FontFamily="Segoe MDL2 Assets"  Foreground="White" FontSize="29" RequestedTheme="Dark" Margin="0,0,5,0"  />
+                            <TextBlock x:Name="polarRect" VerticalAlignment="Center" Text="Rolar/Rectangular" Foreground="White" FontSize="20" />
+                        </StackPanel>
+                    </ListBoxItem>
+
                     <ListBoxItem x:Name="settings">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                             <TextBlock x:Name="settingbutton"  Text="&#xE713;" FontFamily="Segoe MDL2 Assets" Foreground="White" FontSize="26" RequestedTheme="Dark" Margin="0,0,5,0"  />

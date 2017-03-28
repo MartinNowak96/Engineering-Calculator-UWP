@@ -45,6 +45,12 @@ namespace Advanced_Math_Calculator
                 selectionFrame.Navigate(typeof(settingsPage));
                 pageTitle.Text = "Settings";
             }
+            else if (polarRectangular.IsSelected)
+            {
+                selectionFrame.Navigate(typeof(polarToRectangularPage));
+                pageTitle.Text = "Polar/Rectangular";
+            }
+
         }
     }
 }

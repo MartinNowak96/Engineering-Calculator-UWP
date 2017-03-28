@@ -102,6 +102,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="polarToRectangularPage.xaml.cs">
+      <DependentUpon>polarToRectangularPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="settingsPage.xaml.cs">
       <DependentUpon>settingsPage.xaml</DependentUpon>
@@ -135,6 +138,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="polarToRectangularPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="settingsPage.xaml">
       <SubType>Designer</SubType>
