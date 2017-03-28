@@ -9,10 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="#FF232323" RequestedTheme="Dark">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="37*"/>
-                <ColumnDefinition Width="122*"/>
-            </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions >
                 <RowDefinition Height ="50"/>
                 <RowDefinition Height ="Auto"/>
@@ -23,7 +20,7 @@
             </Grid.RowDefinitions>
             <TextBox x:Name="equation"  Grid.Row="1" HorizontalAlignment="Stretch" Margin="57,11,66,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="auto" FontSize="25" TextChanging="equation_TextChanging" Grid.ColumnSpan="2" TextChanged="equation_TextChanged"/>
             <Button x:Name="go" Content="GO!" Grid.Row="1" HorizontalAlignment="Right" Margin="0,11,7,0" VerticalAlignment="Top" Click="go_Click" Height="45" Width="54" Grid.Column="1"/>
-            <TextBlock x:Name="output" Grid.Row="2" HorizontalAlignment="Center" Margin="84.667,89.667,159,90.333" TextWrapping="Wrap" VerticalAlignment="Center" Text="" FontSize="30" Grid.Column="1" />
+            <TextBlock x:Name="output" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Text="" FontSize="30" Grid.Column="1" />
             <TextBlock x:Name="yequals"  Grid.Row="1" HorizontalAlignment="Left" Height="34" Margin="21,15,0,0" TextWrapping="Wrap" Text="Y=" VerticalAlignment="Top" Width="33" FontSize="25"/>
             <TextBox x:Name="xvalue" Grid.Row="1"  HorizontalAlignment="Left" Height="45" Margin="57,59,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="107" FontSize="25" TextChanging="xvalue_TextChanging" Grid.ColumnSpan="2"/>
             <TextBlock x:Name="xequals"  Grid.Row="1" HorizontalAlignment="Left" Height="34" Margin="22,60,0,0" TextWrapping="Wrap" Text="X=" VerticalAlignment="Top" Width="32" FontSize="25"/>
