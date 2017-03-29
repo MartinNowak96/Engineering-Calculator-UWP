@@ -11,73 +11,73 @@
     <Grid Background="#FF232323" RequestedTheme="Dark">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            
+
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
 
-        <!--Input 1-->
-        <ComboBox x:Name="inputType1" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Header="Input Type" SelectedIndex="0" >
-            <ComboBoxItem x:Name="rectangleBox" Content="Rectancular" Tapped="rectangleBox_Tapped"></ComboBoxItem>
-            <ComboBoxItem x:Name="polarBox" Content="Polar" Tapped="polarBox_Tapped"></ComboBoxItem>
-        </ComboBox>
-        <TextBlock x:Name="typeTitle11" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top"/>
-        <TextBlock x:Name="typeTitle12" Grid.Column="2" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top"/>
-        <TextBox x:Name="input11" Grid.Column="1" Margin="11,40,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="inputsChange" TextChanging="input11_TextChanging"/>
-        <TextBox x:Name="input12" Grid.Column="2" VerticalAlignment="Bottom" TextWrapping="Wrap"  TextChanged="inputsChange" Margin="10,0" Grid.Row="0" TextChanging="input12_TextChanging"/>
+            <!--Input 1-->
+            <ComboBox x:Name="inputType1" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Header="Input Type" SelectedIndex="0" >
+                <ComboBoxItem x:Name="rectangleBox" Content="Rectancular" Tapped="rectangleBox_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="polarBox" Content="Polar" Tapped="polarBox_Tapped"></ComboBoxItem>
+            </ComboBox>
+            <TextBlock x:Name="typeTitle11" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top"/>
+            <TextBlock x:Name="typeTitle12" Grid.Column="2" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top"/>
+            <TextBox x:Name="input11" Grid.Column="1" Margin="11,40,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="inputsChange" TextChanging="input11_TextChanging"/>
+            <TextBox x:Name="input12" Grid.Column="2" VerticalAlignment="Bottom" TextWrapping="Wrap"  TextChanged="inputsChange" Margin="10,0" Grid.Row="0" TextChanging="input12_TextChanging"/>
 
-        <!--Input 2-->
+            <!--Input 2-->
 
-        <TextBlock x:Name="typeTitle21" Grid.Column="1" Grid.Row ="1" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Margin="0,4,0,0" />
-        <TextBlock x:Name="typeTitle22" Grid.Column="2" Grid.Row ="1" HorizontalAlignment="Center" Margin="0,5,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" RenderTransformOrigin="0.825,0.51" />
+            <TextBlock x:Name="typeTitle21" Grid.Column="1" Grid.Row ="1" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Margin="0,4,0,0" />
+            <TextBlock x:Name="typeTitle22" Grid.Column="2" Grid.Row ="1" HorizontalAlignment="Center" Margin="0,5,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" RenderTransformOrigin="0.825,0.51" />
 
-        <TextBox x:Name="input21" Grid.Column="1" Grid.Row ="1" TextWrapping="Wrap"  VerticalAlignment="Top" TextChanged="inputsChange" Margin="10,31.4,10,0" TextChanging="input21_TextChanging"/>
-        <TextBox x:Name="input22" Grid.Column="2" Grid.Row ="1"  TextWrapping="Wrap"  VerticalAlignment="Top" TextChanged="inputsChange" Margin="10,31.4,10,0" TextChanging="input22_TextChanging" />
-        <ComboBox x:Name="inputType2" Grid.Column="3" Grid.Row ="1" HorizontalAlignment="Left" Margin="0,31,0,0"  VerticalAlignment="Top" Width="120" SelectedIndex="0" Grid.RowSpan="2">
-            <ComboBoxItem x:Name="rectangleBox2"  Content="Rectancular" Tapped="rectangleBox2_Tapped"></ComboBoxItem>
-            <ComboBoxItem x:Name="polarBox2"  Content="Polar" Tapped="polarBox2_Tapped"></ComboBoxItem>
-        </ComboBox>
-
-
-        <!--Operands-->
-        <ComboBox x:Name="operandselection" Grid.Column="0" Grid.Row ="2" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="36" Height="27" SelectedIndex="0">
-            <ComboBoxItem x:Name="add"   Content="+" Tapped="operandPressed"></ComboBoxItem>
-            <ComboBoxItem x:Name="sub" Content="-" Tapped="operandPressed"></ComboBoxItem>
-            <ComboBoxItem x:Name="multi" Content="/" Tapped="operandPressed"></ComboBoxItem>
-            <ComboBoxItem x:Name="divide" Content="*" Tapped="operandPressed"></ComboBoxItem>
-        </ComboBox>
+            <TextBox x:Name="input21" Grid.Column="1" Grid.Row ="1" TextWrapping="Wrap"  VerticalAlignment="Top" TextChanged="inputsChange" Margin="10,31.4,10,0" TextChanging="input21_TextChanging"/>
+            <TextBox x:Name="input22" Grid.Column="2" Grid.Row ="1"  TextWrapping="Wrap"  VerticalAlignment="Top" TextChanged="inputsChange" Margin="10,31.4,10,0" TextChanging="input22_TextChanging" />
+            <ComboBox x:Name="inputType2" Grid.Column="3" Grid.Row ="1" HorizontalAlignment="Left" Margin="0,31,0,0"  VerticalAlignment="Top" Width="120" SelectedIndex="0" Grid.RowSpan="2">
+                <ComboBoxItem x:Name="rectangleBox2"  Content="Rectancular" Tapped="rectangleBox2_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="polarBox2"  Content="Polar" Tapped="polarBox2_Tapped"></ComboBoxItem>
+            </ComboBox>
 
 
-        <!--Results-->
+            <!--Operands-->
+            <ComboBox x:Name="operandselection" Grid.Column="0" Grid.Row ="2" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="36" Height="27" SelectedIndex="0">
+                <ComboBoxItem x:Name="add"   Content="+" Tapped="operandPressed"></ComboBoxItem>
+                <ComboBoxItem x:Name="sub" Content="-" Tapped="operandPressed"></ComboBoxItem>
+                <ComboBoxItem x:Name="multi" Content="/" Tapped="operandPressed"></ComboBoxItem>
+                <ComboBoxItem x:Name="divide" Content="*" Tapped="operandPressed"></ComboBoxItem>
+            </ComboBox>
 
 
-        <TextBlock x:Name="typeTitle32" Grid.Column="2" Grid.Row="3"  HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged_1"/>
-        <TextBlock x:Name="typeTitle31" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged_1"/>
+            <!--Results-->
 
 
-        <TextBox x:Name="resultX" Grid.Column="1" Grid.Row="3" IsReadOnly="True"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="10,20,10,0"/>
-        <TextBox x:Name="resultY"  Grid.Column="2" Grid.Row="3" IsReadOnly="True" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="10,20,10,0"/>
-        <ComboBox x:Name="resultBox" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ComboBoxItem x:Name="rectangleBox3" Content="Rectancular" Tapped="rectangleBox3_Tapped"></ComboBoxItem>
-            <ComboBoxItem x:Name="polarBox3" Content="Polar" Tapped="polarBox3_Tapped"></ComboBoxItem>
-        </ComboBox>
+            <TextBlock x:Name="typeTitle32" Grid.Column="2" Grid.Row="3"  HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged_1"/>
+            <TextBlock x:Name="typeTitle31" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged_1"/>
+
+
+            <TextBox x:Name="resultX" Grid.Column="1" Grid.Row="3" IsReadOnly="True"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="10,20,10,0"/>
+            <TextBox x:Name="resultY"  Grid.Column="2" Grid.Row="3" IsReadOnly="True" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="10,20,10,0"/>
+            <ComboBox x:Name="resultBox" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                <ComboBoxItem x:Name="rectangleBox3" Content="Rectancular" Tapped="rectangleBox3_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="polarBox3" Content="Polar" Tapped="polarBox3_Tapped"></ComboBoxItem>
+            </ComboBox>
 
 
 
-            
+
 
         </Grid>
 
@@ -109,6 +109,13 @@
                   NeedleWidth="3" 
                   TickLength="11" NeedleBrush="Black" TrailBrush="DarkGray" />
         </Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="219" Stroke="Black" VerticalAlignment="Top" Width="7" Margin="149,153.2,0,0" Grid.Row="1"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="4" Margin="10,245.2,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="278"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="8.386" Margin="156.058,456.498,0,-250.084" Stroke="Black" VerticalAlignment="Top" Width="116.458" RenderTransformOrigin="0.316,0.982" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Rectangle.RenderTransform>
+                <CompositeTransform Rotation="-2468.802" TranslateX="-64.529" TranslateY="-34.397" ScaleX="-1"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
 
 
 

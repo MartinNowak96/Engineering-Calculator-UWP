@@ -17,6 +17,7 @@
                 <RowDefinition Height ="Auto"/>
                 <RowDefinition Height ="20"/>
 
+                
             </Grid.RowDefinitions>
             <!--inputs-->
             <TextBox x:Name="equation"  Grid.Row="1" HorizontalAlignment="Stretch" Margin="57,11,66,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="auto" FontSize="25" TextChanging="equation_TextChanging" Grid.ColumnSpan="2" TextChanged="equation_TextChanged"/>

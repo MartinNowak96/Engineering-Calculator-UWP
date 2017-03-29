@@ -50,6 +50,10 @@
 
             </SplitView.Pane>
             <SplitView.Content>
+                
+                
+                
+
                 <Frame x:Name="selectionFrame"></Frame>
             </SplitView.Content>
         </SplitView>
