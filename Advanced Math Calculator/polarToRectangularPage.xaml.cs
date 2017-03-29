@@ -32,32 +32,29 @@ namespace Advanced_Math_Calculator
 
         }
 
-        private void inputType1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
 
+
+
+        //drop box change
         private void polarBox_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
             typeTitle11.Text = "R";
             typeTitle12.Text = "θ";
         }
-
         private void rectangleBox_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
             typeTitle11.Text = "X";
             typeTitle12.Text = "Y";
         }
-
         private void polarBox2_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
             typeTitle21.Text = "R";
             typeTitle22.Text = "θ";
         }
-
         private void rectangleBox2_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
@@ -70,7 +67,6 @@ namespace Advanced_Math_Calculator
             typeTitle31.Text = "R";
             typeTitle32.Text = "θ";
         }
-
         private void rectangleBox3_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
@@ -78,11 +74,8 @@ namespace Advanced_Math_Calculator
             typeTitle32.Text = "Y";
         }
 
-        private void textBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
-        {
 
-        }
-
+        //conversions
         double rthetaToX(double r, double theta)
         {
             double xvalue = r * (Math.Cos(theta*Math.PI/180));
@@ -145,16 +138,28 @@ namespace Advanced_Math_Calculator
                     if (resultBox.SelectedIndex == 1)//if the answer is in polar
                     {
                         double x3;
-                        x3= xyToR(resultX1, resultY1);
+                        x3 = xyToR(resultX1, resultY1);
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x3;
-                        RadialGauge.Value =90- resultY1;
-                    }
-                    resultX.Text = resultX1.ToString();
-                    resultY.Text = resultY1.ToString();
+                        RadialGauge.Value = 90 - resultY1;
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = resultY1.ToString();
 
-                    
-                }
+                    }
+                    else
+                    {
+
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = resultY1.ToString();
+
+                        double x5;
+                        x5 = xyToR(resultX1, resultY1);
+                        resultY1 = xyToTheta(resultX1, resultY1);
+                        resultX1 = x5;
+                        RadialGauge.Value = 90 - resultY1;
+                    }
+
+                }//addition
                 else if(operandselection.SelectedIndex == 1)
                 {
                     if (inputType1.SelectedIndex == 1)//if input1 is polar
@@ -179,35 +184,39 @@ namespace Advanced_Math_Calculator
                         x3 = xyToR(resultX1, resultY1);
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x3;
-                        RadialGauge.Value =90- resultY1;
-
+                        RadialGauge.Value = 90 - resultY1;
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = resultY1.ToString();
 
                     }
-                   
-                    resultX.Text = resultX1.ToString();
-                    resultY.Text = resultY1.ToString();
+                    else
+                    {
 
-                }
-                else if (operandselection.SelectedIndex == 2)
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = resultY1.ToString();
+
+                        double x5;
+                        x5 = xyToR(resultX1, resultY1);
+                        resultY1 = xyToTheta(resultX1, resultY1);
+                        resultX1 = x5;
+                        RadialGauge.Value = 90 - resultY1;
+                    }
+
+                }//subtraction
+                else if (operandselection.SelectedIndex == 2)//division
                 {
-                    
+                    if(inputType1.SelectedIndex == 0)//if its rectangular convert it to polar
+                    {
+
+                    }
                 }
                 else if (operandselection.SelectedIndex == 3)
                 {
                     
                 }
                     
-            }
-        }
-
-
-
-
-
-
-
-
-
+            }//multiplication
+        }//calculations
 
 
 
@@ -225,6 +234,140 @@ namespace Advanced_Math_Calculator
         private void operandPressed(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
+        }
+
+        //text changing only allow numbers
+        private void input11_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            string x = input11.Text;
+            string xnum = input11.Text;
+            int position = input11.SelectionStart;
+            while (xnum != "")
+            {
+                if (xnum.Length == 1)//if there is only 1 char in x
+                {
+                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    {
+                        x = x.Replace(xnum, "");//replace it with nothing
+
+                        input11.Text = x;//set the output
+                        input11.SelectionStart = position - 1;//set the position
+                        break;
+                    }
+                    xnum = "";
+                    break;
+                }
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                {
+                    x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
+                    input11.Text = x;
+                    input11.SelectionStart = position - 1;
+                }
+                if (xnum.Length != 1)
+                {
+                    xnum = xnum.Substring(1, xnum.Length - 1);//removes first char to check the next
+                }
+
+            }//end while
+        }
+        private void input12_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            string x = input12.Text;
+            string xnum = input12.Text;
+            int position = input12.SelectionStart;
+            while (xnum != "")
+            {
+                if (xnum.Length == 1)//if there is only 1 char in x
+                {
+                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    {
+                        x = x.Replace(xnum, "");//replace it with nothing
+
+                        input12.Text = x;//set the output
+                        input12.SelectionStart = position - 1;//set the position
+                        break;
+                    }
+                    xnum = "";
+                    break;
+                }
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                {
+                    x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
+                    input12.Text = x;
+                    input12.SelectionStart = position - 1;
+                }
+                if (xnum.Length != 1)
+                {
+                    xnum = xnum.Substring(1, xnum.Length - 1);//removes first char to check the next
+                }
+
+            }//end while
+        }
+        private void input21_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            string x = input21.Text;
+            string xnum = input21.Text;
+            int position = input21.SelectionStart;
+            while (xnum != "")
+            {
+                if (xnum.Length == 1)//if there is only 1 char in x
+                {
+                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    {
+                        x = x.Replace(xnum, "");//replace it with nothing
+
+                        input21.Text = x;//set the output
+                        input21.SelectionStart = position - 1;//set the position
+                        break;
+                    }
+                    xnum = "";
+                    break;
+                }
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                {
+                    x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
+                    input21.Text = x;
+                    input21.SelectionStart = position - 1;
+                }
+                if (xnum.Length != 1)
+                {
+                    xnum = xnum.Substring(1, xnum.Length - 1);//removes first char to check the next
+                }
+
+            }//end while
+        }
+        private void input22_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            string x = input22.Text;
+            string xnum = input22.Text;
+            int position = input22.SelectionStart;
+            while (xnum != "")
+            {
+                if (xnum.Length == 1)//if there is only 1 char in x
+                {
+                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    {
+                        x = x.Replace(xnum, "");//replace it with nothing
+
+                        input22.Text = x;//set the output
+                        input22.SelectionStart = position - 1;//set the position
+                        break;
+                    }
+                    xnum = "";
+                    break;
+                }
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                {
+                    x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
+                    input22.Text = x;
+                    input22.SelectionStart = position - 1;
+                }
+                if (xnum.Length != 1)
+                {
+                    xnum = xnum.Substring(1, xnum.Length - 1);//removes first char to check the next
+                }
+
+            }//end while
         }
     }
 }
