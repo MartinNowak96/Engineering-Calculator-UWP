@@ -101,16 +101,16 @@
                   StepSize="1"
                   IsInteractive="False"
                   TickSpacing="90"
-                  ScaleWidth="21"
+                  ScaleWidth="35"
                   MinAngle="0"
                   MaxAngle="360"
                   Unit=""
                   TickBrush="Gainsboro"
                   ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                   UnitBrush="Black"
-                  ValueBrush="Black" 
+                  ValueBrush="DarkGray" 
                   NeedleWidth="3" 
-                  TickLength="11" NeedleBrush="Black" TrailBrush="DarkGray" />
+                  TickLength="11" NeedleBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedDisabled}"  TrailBrush="DarkGray" />
         </Grid>
 
 
