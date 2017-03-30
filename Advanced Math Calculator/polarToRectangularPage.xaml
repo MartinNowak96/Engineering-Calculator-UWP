@@ -112,7 +112,6 @@
                   NeedleWidth="3" 
                   TickLength="11" NeedleBrush="Black" TrailBrush="DarkGray" />
         </Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="4" Margin="10,245.2,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="278"/>
 
 
 
