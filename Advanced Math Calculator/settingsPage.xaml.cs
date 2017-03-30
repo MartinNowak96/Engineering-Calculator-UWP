@@ -26,5 +26,21 @@ namespace Advanced_Math_Calculator
         {
             this.InitializeComponent();
         }
+
+        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lightButton_Checked(object sender, RoutedEventArgs e)
+        {
+            darkButton.IsChecked = false;
+
+        }
+
+        private void darkButton_Checked(object sender, RoutedEventArgs e)
+        {
+            lightButton.IsChecked = false;
+        }
     }
 }
