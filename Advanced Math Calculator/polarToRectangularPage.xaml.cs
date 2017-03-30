@@ -110,7 +110,7 @@ namespace Advanced_Math_Calculator
 
         void calculateResult()
         {
-            if(input11.Text != "" && input12.Text != "" && input21.Text != "" && input22.Text != "")
+            if(input11.Text.Any(char.IsDigit) && input12.Text.Any(char.IsDigit) && input21.Text.Any(char.IsDigit) && input22.Text.Any(char.IsDigit))
             {
                 double x1 = Convert.ToDouble(input11.Text);
         double y1 = Convert.ToDouble(input12.Text);
