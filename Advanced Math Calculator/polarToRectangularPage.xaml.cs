@@ -157,6 +157,7 @@ namespace Advanced_Math_Calculator
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x5;
                         RadialGauge.Value = 90 - resultY1;
+                        
                     }
 
                 }//addition
@@ -205,8 +206,49 @@ namespace Advanced_Math_Calculator
                 }//subtraction
                 else if (operandselection.SelectedIndex == 2)//division
                 {
-                    if(inputType1.SelectedIndex == 0)//if its rectangular convert it to polar
+                    double xone = Convert.ToDouble(input11.Text);
+                    double yone = Convert.ToDouble(input12.Text);
+                    double xtwo = Convert.ToDouble(input21.Text);
+                    double ytwo = Convert.ToDouble(input22.Text);
+                    double x1result;
+                    double y1result;
+
+                    if (inputType1.SelectedIndex == 0)//if its rectangular convert it to polar
                     {
+                        double xone2 = xyToR(xone, yone);
+                        yone = xyToTheta(xone, yone);
+                        xone = xone2;
+                    }
+                    if (inputType2.SelectedIndex == 1)//if its rectangular convert it to polar
+                    {
+                        double xtwo2 = xyToR(xtwo, ytwo);
+                        ytwo = xyToTheta(xtwo, ytwo);
+                        xtwo = xtwo2;
+                    }
+                    x1result = xone / xtwo;
+                    y1result = yone - ytwo;
+                    if (resultBox.SelectedIndex == 1)//if the answer is in polar
+                    {
+                        double x3;
+                        x3 = xyToR(x1result, y1result);
+                        y1result = xyToTheta(x1result, y1result);
+                        resultX1 = x3;
+                        RadialGauge.Value = 90 - y1result;
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = y1result.ToString();
+
+                    }
+                    else
+                    {
+
+                        resultX.Text = x1result.ToString();
+                        resultY.Text = y1result.ToString();
+
+                        double x5;
+                        x5 = xyToR(x1result, y1result);
+                        y1result = xyToTheta(x1result, y1result);
+                        x1result = x5;
+                        RadialGauge.Value = 90 - y1result;
 
                     }
                 }
