@@ -96,15 +96,20 @@ namespace Advanced_Math_Calculator
         double xyToTheta(double xvalue, double yvalue)
         {
             double theta;
+            
             if (xvalue != 0)
             {
                 theta = Math.Atan(yvalue / xvalue) * 180 / Math.PI;
             } else
             {
-                theta = Math.Atan(yvalue / .000000000000000000001);
+                theta = Math.Atan(yvalue / .000000000000000000001) * 180 / Math.PI;
+            }
+            if (xvalue < 0)
+            {
+                theta = theta + 180;
             }
 
-            return theta;
+                return theta;
         }
 
         void calculateResult()
@@ -465,7 +470,6 @@ namespace Advanced_Math_Calculator
         }//calculations
 
 
-
         private void inputsChange(object sender, TextChangedEventArgs e)
         {
             calculateResult();
@@ -488,7 +492,7 @@ namespace Advanced_Math_Calculator
             {
                 if (xnum.Length == 1)//if there is only 1 char in x
                 {
-                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    if (!xnum.Any(char.IsDigit) && xnum != "." && xnum != "-")//is it not a digit or a decimal
                     {
                         x = x.Replace(xnum, "");//replace it with nothing
 
@@ -499,7 +503,7 @@ namespace Advanced_Math_Calculator
                     xnum = "";
                     break;
                 }
-                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != "." && xnum.Substring(0, 1) != "-")// if its not a digit or a decimal 
                 {
                     x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
                     input11.Text = x;
@@ -521,7 +525,7 @@ namespace Advanced_Math_Calculator
             {
                 if (xnum.Length == 1)//if there is only 1 char in x
                 {
-                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    if (!xnum.Any(char.IsDigit) && xnum != "." && xnum != "-")//is it not a digit or a decimal
                     {
                         x = x.Replace(xnum, "");//replace it with nothing
 
@@ -532,7 +536,7 @@ namespace Advanced_Math_Calculator
                     xnum = "";
                     break;
                 }
-                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != "." && xnum.Substring(0, 1) != "-")// if its not a digit or a decimal 
                 {
                     x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
                     input12.Text = x;
@@ -554,7 +558,7 @@ namespace Advanced_Math_Calculator
             {
                 if (xnum.Length == 1)//if there is only 1 char in x
                 {
-                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    if (!xnum.Any(char.IsDigit) && xnum != "." && xnum != "-")//is it not a digit or a decimal
                     {
                         x = x.Replace(xnum, "");//replace it with nothing
 
@@ -565,7 +569,7 @@ namespace Advanced_Math_Calculator
                     xnum = "";
                     break;
                 }
-                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != "." && xnum.Substring(0, 1) != "-")// if its not a digit or a decimal 
                 {
                     x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
                     input21.Text = x;
@@ -587,7 +591,7 @@ namespace Advanced_Math_Calculator
             {
                 if (xnum.Length == 1)//if there is only 1 char in x
                 {
-                    if (!xnum.Any(char.IsDigit) && xnum != ".")//is it not a digit or a decimal
+                    if (!xnum.Any(char.IsDigit) && xnum != "." && xnum != "-")//is it not a digit or a decimal
                     {
                         x = x.Replace(xnum, "");//replace it with nothing
 
@@ -598,7 +602,7 @@ namespace Advanced_Math_Calculator
                     xnum = "";
                     break;
                 }
-                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != ".")// if its not a digit or a decimal 
+                if (!xnum.Substring(0, 1).Any(char.IsDigit) && xnum.Substring(0, 1) != "." && xnum.Substring(0, 1) != "-")// if its not a digit or a decimal 
                 {
                     x = x.Replace(xnum.Substring(0, 1), "");//replace the bad char with nothing
                     input22.Text = x;
