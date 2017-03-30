@@ -31,7 +31,6 @@ namespace Advanced_Math_Calculator
         {
 
         }
-
         private void textBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
         {
 
@@ -113,11 +112,11 @@ namespace Advanced_Math_Calculator
             if(input11.Text.Any(char.IsDigit) && input12.Text.Any(char.IsDigit) && input21.Text.Any(char.IsDigit) && input22.Text.Any(char.IsDigit))
             {
                 double x1 = Convert.ToDouble(input11.Text);
-        double y1 = Convert.ToDouble(input12.Text);
-        double x2 = Convert.ToDouble(input21.Text);
-        double y2 = Convert.ToDouble(input22.Text);
-        double resultX1;
-        double resultY1;
+                double y1 = Convert.ToDouble(input12.Text);
+                double x2 = Convert.ToDouble(input21.Text);
+                double y2 = Convert.ToDouble(input22.Text);
+                double resultX1;
+                double resultY1;
 
 
                 if(operandselection.SelectedIndex == 0)//addition
@@ -145,6 +144,9 @@ namespace Advanced_Math_Calculator
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x3;
 
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = resultY1.ToString();
+
                         if (resultY1 >= 0)
                         {
                             resultY1 = -resultY1;
@@ -165,11 +167,6 @@ namespace Advanced_Math_Calculator
 
                             RadialGauge.Value = resultY1;
                         }
-
-
-                        resultX.Text = resultX1.ToString();
-                        resultY.Text = resultY1.ToString();
-
                     }
                     else// if the answer is in rectangular
                     {
@@ -473,18 +470,14 @@ namespace Advanced_Math_Calculator
         {
             calculateResult();
         }
-
-
         private void DropBoxChange(object sender, SelectionChangedEventArgs e)
         {
             calculateResult();
         }
-
         private void operandPressed(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
         }
-
         //text changing only allow numbers
         private void input11_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
         {
