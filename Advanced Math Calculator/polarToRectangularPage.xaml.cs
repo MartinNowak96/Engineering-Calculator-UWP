@@ -171,7 +171,7 @@ namespace Advanced_Math_Calculator
                         resultY.Text = resultY1.ToString();
 
                     }
-                    else
+                    else// if the answer is in rectangular
                     {
 
                         resultX.Text = resultX1.ToString();
@@ -229,12 +229,33 @@ namespace Advanced_Math_Calculator
                         x3 = xyToR(resultX1, resultY1);
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x3;
-                        RadialGauge.Value = 90 - resultY1;
+                        
                         resultX.Text = resultX1.ToString();
                         resultY.Text = resultY1.ToString();
 
+                        if (resultY1 >= 0)
+                        {
+                            resultY1 = -resultY1;
+                            while (resultY1 < 0)
+                            {
+                                resultY1 = resultY1 + 360;
+                            }
+                            RadialGauge.Value = resultY1;
+                        }
+                        else
+                        {
+
+                            resultY1 = -resultY1;
+                            while (resultY1 < 0)
+                            {
+                                resultY1 = resultY1 + 360;
+                            }
+
+                            RadialGauge.Value = resultY1;
+                        }
+
                     }
-                    else
+                    else//if answer is not in polar
                     {
 
                         resultX.Text = resultX1.ToString();
@@ -244,7 +265,27 @@ namespace Advanced_Math_Calculator
                         x5 = xyToR(resultX1, resultY1);
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x5;
-                        RadialGauge.Value = 90 - resultY1;
+
+                        if (resultY1 >= 0)
+                        {
+                            resultY1 = -resultY1;
+                            while (resultY1 < 0)
+                            {
+                                resultY1 = resultY1 + 360;
+                            }
+                            RadialGauge.Value = resultY1;
+                        }
+                        else
+                        {
+
+                            resultY1 = -resultY1;
+                            while (resultY1 < 0)
+                            {
+                                resultY1 = resultY1 + 360;
+                            }
+
+                            RadialGauge.Value = resultY1;
+                        }
                     }
 
                 }//subtraction
@@ -337,8 +378,91 @@ namespace Advanced_Math_Calculator
                 }//division
                 else if (operandselection.SelectedIndex == 3)
                 {
-                    
-                }
+                    double xone = Convert.ToDouble(input11.Text);
+                    double yone = Convert.ToDouble(input12.Text);
+                    double xtwo = Convert.ToDouble(input21.Text);
+                    double ytwo = Convert.ToDouble(input22.Text);
+                    double x1result;
+                    double y1result;
+
+                    if (inputType1.SelectedIndex == 0)//if its rectangular convert it to polar
+                    {
+                        double xone2 = xyToR(xone, yone);
+                        yone = xyToTheta(xone, yone);
+                        xone = xone2;
+                    }
+                    if (inputType2.SelectedIndex == 0)//if its rectangular convert it to polar
+                    {
+                        double xtwo2 = xyToR(xtwo, ytwo);
+                        ytwo = xyToTheta(xtwo, ytwo);
+                        xtwo = xtwo2;
+                    }
+                    x1result = xone * xtwo;//polar
+                    y1result = yone + ytwo;
+                    if (resultBox.SelectedIndex == 1)//if the answer is in polar
+                    {
+                        resultX.Text = x1result.ToString();
+                        resultY.Text = y1result.ToString();
+
+
+
+                        if (y1result >= 0)
+                        {
+                            y1result = -y1result;
+                            while (y1result < 0)
+                            {
+                                y1result = y1result + 360;
+                            }
+                            RadialGauge.Value = y1result;
+                        }
+                        else
+                        {
+
+                            y1result = -y1result;
+                            while (y1result < 0)
+                            {
+                                y1result = y1result + 360;
+                            }
+
+                            RadialGauge.Value = y1result;
+                        }
+
+
+                    }
+                    else//if the answer is in rectangular, change polar into rectangle
+                    {
+                        double x3;
+                        if (y1result >= 0)
+                        {
+                            double y1Theta = -y1result;
+                            while (y1Theta < 0)
+                            {
+                                y1Theta = y1Theta + 360;
+                            }
+                            RadialGauge.Value = y1Theta;
+                        }
+                        else
+                        {
+
+                            double y1Theta = -y1result;
+                            while (y1Theta < 0)
+                            {
+                                y1Theta = y1Theta + 360;
+                            }
+
+                            RadialGauge.Value = y1Theta;
+                        }
+
+
+                        x3 = rthetaToX(x1result, y1result);
+                        y1result = rthetaToY(x1result, y1result);
+                        resultX1 = x3;
+
+                        resultX.Text = resultX1.ToString();
+                        resultY.Text = y1result.ToString();
+
+                    }
+                }//multiplication
                     
             }//multiplication
         }//calculations
