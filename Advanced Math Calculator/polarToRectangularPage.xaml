@@ -112,13 +112,7 @@
                   NeedleWidth="3" 
                   TickLength="11" NeedleBrush="Black" TrailBrush="DarkGray" />
         </Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="219" Stroke="Black" VerticalAlignment="Top" Width="7" Margin="149,153.2,0,0" Grid.Row="1"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="4" Margin="10,245.2,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="278"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="8.386" Margin="156.058,456.498,0,-250.084" Stroke="Black" VerticalAlignment="Top" Width="116.458" RenderTransformOrigin="0.316,0.982" UseLayoutRounding="False" d:LayoutRounding="Auto">
-            <Rectangle.RenderTransform>
-                <CompositeTransform Rotation="-2468.802" TranslateX="-64.529" TranslateY="-34.397" ScaleX="-1"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
 
 
 

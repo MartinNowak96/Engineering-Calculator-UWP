@@ -32,7 +32,10 @@ namespace Advanced_Math_Calculator
 
         }
 
+        private void textBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
+        {
 
+        }
 
 
 
