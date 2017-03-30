@@ -82,7 +82,10 @@
         </Grid>
 
         <Grid VerticalAlignment="Center"
-                HorizontalAlignment="Center" Grid.Row="1">
+                HorizontalAlignment="Center" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <CompositeTransform Rotation="90"/>
+            </Grid.RenderTransform>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition Width="250"></ColumnDefinition>
@@ -92,7 +95,7 @@
                
                   x:Name="RadialGauge"
                   Grid.Column="1"
-                  Value="90"
+                  Value="0"
                   Minimum="0"
                   Maximum="360"
                   StepSize="1"

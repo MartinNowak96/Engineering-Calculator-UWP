@@ -141,7 +141,29 @@ namespace Advanced_Math_Calculator
                         x3 = xyToR(resultX1, resultY1);
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x3;
-                        RadialGauge.Value = 90 - resultY1;
+
+                        if (resultY1 >= 0)
+                        {
+                            resultY1 = -resultY1;
+                            while (resultY1 < 0)
+                            {
+                                resultY1 = resultY1 + 360;
+                            }
+                            RadialGauge.Value = resultY1;
+                        }
+                        else
+                        {
+
+                            resultY1 = -resultY1;
+                            while (resultY1 < 0)
+                            {
+                                resultY1 = resultY1 + 360;
+                            }
+
+                            RadialGauge.Value = resultY1;
+                        }
+
+
                         resultX.Text = resultX1.ToString();
                         resultY.Text = resultY1.ToString();
 
@@ -156,8 +178,27 @@ namespace Advanced_Math_Calculator
                         x5 = xyToR(resultX1, resultY1);
                         resultY1 = xyToTheta(resultX1, resultY1);
                         resultX1 = x5;
-                        RadialGauge.Value = 90 - resultY1;
-                        
+                        if (resultY1 >= 0)
+                        {
+                            double y1Theta = -resultY1;
+                            while (y1Theta < 0)
+                            {
+                                y1Theta = y1Theta + 360;
+                            }
+                            RadialGauge.Value = y1Theta;
+                        }
+                        else
+                        {
+
+                            double y1Theta = -resultY1;
+                            while (y1Theta < 0)
+                            {
+                                y1Theta = y1Theta + 360;
+                            }
+
+                            RadialGauge.Value = y1Theta;
+                        }
+
                     }
 
                 }//addition
@@ -219,39 +260,78 @@ namespace Advanced_Math_Calculator
                         yone = xyToTheta(xone, yone);
                         xone = xone2;
                     }
-                    if (inputType2.SelectedIndex == 1)//if its rectangular convert it to polar
+                    if (inputType2.SelectedIndex == 0)//if its rectangular convert it to polar
                     {
                         double xtwo2 = xyToR(xtwo, ytwo);
                         ytwo = xyToTheta(xtwo, ytwo);
                         xtwo = xtwo2;
                     }
-                    x1result = xone / xtwo;
+                    x1result = xone / xtwo;//polar
                     y1result = yone - ytwo;
                     if (resultBox.SelectedIndex == 1)//if the answer is in polar
                     {
+                        resultX.Text = x1result.ToString();
+                        resultY.Text = y1result.ToString();
+
+
+                       
+                        if (y1result>= 0)
+                        {
+                            y1result = -y1result;
+                            while (y1result < 0)
+                            {
+                                y1result= y1result + 360;
+                            }
+                            RadialGauge.Value = y1result; 
+                        }
+                        else
+                        {
+
+                            y1result = -y1result;
+                            while (y1result < 0)
+                            {
+                                y1result = y1result + 360;
+                            }
+                            
+                            RadialGauge.Value = y1result;
+                        }
+                       
+
+                    }
+                    else//if the answer is in rectangular, change polar into rectangle
+                    {
                         double x3;
-                        x3 = xyToR(x1result, y1result);
-                        y1result = xyToTheta(x1result, y1result);
+                        if (y1result >= 0)
+                        {
+                            double y1Theta = -y1result;
+                            while (y1Theta < 0)
+                            {
+                                y1Theta = y1Theta + 360;
+                            }
+                            RadialGauge.Value = y1Theta;
+                        }
+                        else
+                        {
+
+                            double y1Theta = -y1result;
+                            while (y1Theta < 0)
+                            {
+                                y1Theta = y1Theta + 360;
+                            }
+
+                            RadialGauge.Value = y1Theta;
+                        }
+
+
+                        x3 = rthetaToX(x1result, y1result);
+                        y1result = rthetaToY(x1result, y1result);
                         resultX1 = x3;
-                        RadialGauge.Value = 90 - y1result;
+                        
                         resultX.Text = resultX1.ToString();
                         resultY.Text = y1result.ToString();
 
                     }
-                    else
-                    {
-
-                        resultX.Text = x1result.ToString();
-                        resultY.Text = y1result.ToString();
-
-                        double x5;
-                        x5 = xyToR(x1result, y1result);
-                        y1result = xyToTheta(x1result, y1result);
-                        x1result = x5;
-                        RadialGauge.Value = 90 - y1result;
-
-                    }
-                }
+                }//division
                 else if (operandselection.SelectedIndex == 3)
                 {
                     
