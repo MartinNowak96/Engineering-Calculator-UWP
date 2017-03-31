@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Windows;
+using Windows.UI;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,8 +37,9 @@ namespace Advanced_Math_Calculator
 
         private void lightButton_Checked(object sender, RoutedEventArgs e)
         {
-            darkButton.IsChecked = false;
-
+            darkButton.IsChecked = false;  
+            gridBackground.Background= new SolidColorBrush(Color.FromArgb(255, 100, 100, 100));
+            
         }
 
         private void darkButton_Checked(object sender, RoutedEventArgs e)
