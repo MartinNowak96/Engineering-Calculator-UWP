@@ -13,15 +13,12 @@
     <Grid x:Name="gridBackground" Background="#FF232323" RequestedTheme="Dark">
         <StackPanel Orientation="Vertical">
             <RadioButton x:Name="lightButton" Content="Light" HorizontalAlignment="Left"  VerticalAlignment="Top" Checked="lightButton_Checked"/>
-            <RadioButton x:Name="darkButton" Content="Dark" HorizontalAlignment="Left"  VerticalAlignment="Top" IsChecked="True" Checked="darkButton_Checked"/>
+            <RadioButton x:Name="darkButton" Content="Dark" HorizontalAlignment="Left"  VerticalAlignment="Top" IsChecked="{x:Null}" Checked="darkButton_Checked"/>
 
 
 
         </StackPanel>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-
-
-        </ScrollViewer>
+  
 
     </Grid>
 </Page>

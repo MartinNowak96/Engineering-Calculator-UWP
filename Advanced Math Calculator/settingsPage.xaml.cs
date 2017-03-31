@@ -38,8 +38,10 @@ namespace Advanced_Math_Calculator
         private void lightButton_Checked(object sender, RoutedEventArgs e)
         {
             darkButton.IsChecked = false;  
-            gridBackground.Background= new SolidColorBrush(Color.FromArgb(255, 100, 100, 100));
-            
+            gridBackground.Background= new SolidColorBrush(Color.FromArgb(100, 180, 180, 180));
+            MainPage.IconListBox
+
+
         }
 
         private void darkButton_Checked(object sender, RoutedEventArgs e)
