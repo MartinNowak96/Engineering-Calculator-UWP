@@ -39,7 +39,7 @@ namespace Advanced_Math_Calculator
         {
             darkButton.IsChecked = false;  
             gridBackground.Background= new SolidColorBrush(Color.FromArgb(100, 180, 180, 180));
-            MainPage.IconListBox
+            //MainPage.IconListBox
 
 
         }

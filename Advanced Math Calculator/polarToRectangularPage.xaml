@@ -78,38 +78,136 @@
 
 
         </Grid>
-
-        <Grid VerticalAlignment="Center"
+        
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <!-- Expander 1-->
+                <controls:Expander x:Name="Expander1" VerticalAlignment="Top" Margin="0,0,0,10" 
+                               Header="Input 1"
+                               IsExpanded="False">
+                    <Grid Height="250" Background="Transparent">
+                        <!-- radial gauge 1-->
+                        <Grid VerticalAlignment="Center"
                 HorizontalAlignment="Center" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <CompositeTransform Rotation="90"/>
-            </Grid.RenderTransform>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <controls:RadialGauge 
+                            <Grid.RenderTransform>
+                                <CompositeTransform Rotation="90"/>
+                            </Grid.RenderTransform>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <controls:RadialGauge 
                
-                  x:Name="RadialGauge"
-                  Grid.Column="1"
-                  Value="0"
-                  Minimum="0"
-                  Maximum="360"
-                  StepSize="1"
-                  IsInteractive="False"
-                  TickSpacing="90"
-                  ScaleWidth="35"
-                  MinAngle="0"
-                  MaxAngle="360"
-                  Unit=""
-                  TickBrush="Gainsboro"
-                  ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                  UnitBrush="Black"
-                  ValueBrush="DarkGray" 
-                  NeedleWidth="3" 
-                  TickLength="11" NeedleBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedDisabled}"  TrailBrush="DarkGray" />
-        </Grid>
+                                      x:Name="RadialInput1"
+                                      Grid.Column="1"
+                                      Value="0"
+                                      Minimum="0"
+                                      Maximum="360"
+                                      StepSize="1"
+                                      IsInteractive="False"
+                                      TickSpacing="90"
+                                      ScaleWidth="35"
+                                      MinAngle="0"
+                                      MaxAngle="360"
+                                      Unit=""
+                                      TickBrush="Gainsboro"
+                                      ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                                      UnitBrush="Black"
+                                      ValueBrush="DarkGray" 
+                                      NeedleWidth="3" 
+                                      TickLength="11" NeedleBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedDisabled}"  TrailBrush="DarkGray" />
+                        </Grid>
+                    </Grid>
+                </controls:Expander>
+<!-- Expander 2-->
+                <controls:Expander x:Name="Expander2" VerticalAlignment="Top" Margin="0,0,0,10" 
+                               Header="Input 2"
+                               IsExpanded="False">
+                    <Grid Height="250" Background="Transparent">
+                        <Grid VerticalAlignment="Center"
+                HorizontalAlignment="Center" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <CompositeTransform Rotation="90"/>
+                            </Grid.RenderTransform>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!-- radial gauge 2-->
+                            <controls:RadialGauge 
+               
+                                  x:Name="RadialInput2"
+                                  Grid.Column="1"
+                                  Value="0"
+                                  Minimum="0"
+                                  Maximum="360"
+                                  StepSize="1"
+                                  IsInteractive="False"
+                                  TickSpacing="90"
+                                  ScaleWidth="35"
+                                  MinAngle="0"
+                                  MaxAngle="360"
+                                  Unit=""
+                                  TickBrush="Gainsboro"
+                                  ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                                  UnitBrush="Black"
+                                  ValueBrush="DarkGray" 
+                                  NeedleWidth="3" 
+                                  TickLength="11" NeedleBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedDisabled}"  TrailBrush="DarkGray" />
+                        </Grid>
+                    </Grid>
+                </controls:Expander>
+
+
+                <!-- radial gauge result-->
+                <controls:Expander x:Name="ResultExpander" VerticalAlignment="Top" Margin="0,0,0,10" 
+                               Header="Result"
+                               IsExpanded="True">
+                    <Grid Height="250" Background="Transparent">
+                        
+                            <Grid VerticalAlignment="Center"
+                                HorizontalAlignment="Center" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                                    <Grid.RenderTransform>
+                                        <CompositeTransform Rotation="90"/>
+                                    </Grid.RenderTransform>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="250"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <controls:RadialGauge 
+               
+                                  x:Name="RadialGauge"
+                                  Grid.Column="1"
+                                  Value="0"
+                                  Minimum="0"
+                                  Maximum="360"
+                                  StepSize="1"
+                                  IsInteractive="False"
+                                  TickSpacing="90"
+                                  ScaleWidth="35"
+                                  MinAngle="0"
+                                  MaxAngle="360"
+                                  Unit=""
+                                  TickBrush="Gainsboro"
+                                  ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                                  UnitBrush="Black"
+                                  ValueBrush="DarkGray" 
+                                  NeedleWidth="3" 
+                                  TickLength="11" NeedleBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedDisabled}"  TrailBrush="DarkGray" />
+                                </Grid>
+                                   
+                                   
+                    </Grid>
+                </controls:Expander>
+                
+
+            </StackPanel> <!-- End expander stack panel-->
+        </ScrollViewer>
+
+
 
 
 
