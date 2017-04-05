@@ -44,24 +44,27 @@ namespace Advanced_Math_Calculator
             calculateResult();
             typeTitle11.Text = "R";
             typeTitle12.Text = "θ";
-            double y1 = Convert.ToDouble(input12.Text);
-            y1 = -y1;
-            while (y1 < 0)
+            if (input12.Text.Any(char.IsDigit))
             {
-                y1 = y1 + 360;
+                double y1 = Convert.ToDouble(input12.Text);
+                y1 = -y1;
+                while (y1 < 0)
+                {
+                    y1 = y1 + 360;
+                }
+                RadialInput1.Value = y1;
             }
-            RadialInput1.Value = y1;
-
         }
         private void rectangleBox_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
             typeTitle11.Text = "X";
             typeTitle12.Text = "Y";
+            if (input11.Text.Any(char.IsDigit) && input12.Text.Any(char.IsDigit))
+            {
+                double x1 = Convert.ToDouble(input11.Text);
+                double y1 = Convert.ToDouble(input12.Text);
 
-            double x1 = Convert.ToDouble(input11.Text);
-            double y1 = Convert.ToDouble(input12.Text);
-           
                 y1 = -xyToTheta(x1, y1);
 
                 while (y1 < 0)
@@ -70,20 +73,21 @@ namespace Advanced_Math_Calculator
                 }
                 RadialInput1.Value = y1;
             }
+            }
         private void polarBox2_Tapped(object sender, TappedRoutedEventArgs e)
         {
             calculateResult();
             typeTitle21.Text = "R";
             typeTitle22.Text = "θ";
-
-            double y1 = Convert.ToDouble(input22.Text);
-            y1 = -y1;
-            while (y1 < 0)
-            {
-                y1 = y1 + 360;
+           if( input22.Text.Any(char.IsDigit)){
+                double y1 = Convert.ToDouble(input22.Text);
+                y1 = -y1;
+                while (y1 < 0)
+                {
+                    y1 = y1 + 360;
+                }
+                RadialInput2.Value = y1;
             }
-            RadialInput2.Value = y1;
-
         }
         private void rectangleBox2_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -91,18 +95,19 @@ namespace Advanced_Math_Calculator
             typeTitle21.Text = "X";
             typeTitle22.Text = "Y";
 
-
-            double x1 = Convert.ToDouble(input21.Text);
-            double y1 = Convert.ToDouble(input22.Text);
-
-            y1 = -xyToTheta(x1, y1);
-
-            while (y1 < 0)
+            if (input21.Text.Any(char.IsDigit) && input22.Text.Any(char.IsDigit))
             {
-                y1 = y1 + 360;
+                double x1 = Convert.ToDouble(input21.Text);
+                double y1 = Convert.ToDouble(input22.Text);
+
+                y1 = -xyToTheta(x1, y1);
+
+                while (y1 < 0)
+                {
+                    y1 = y1 + 360;
+                }
+                RadialInput2.Value = y1;
             }
-            RadialInput2.Value = y1;
-        
         }
         private void polarBox3_Tapped(object sender, TappedRoutedEventArgs e)
         {
