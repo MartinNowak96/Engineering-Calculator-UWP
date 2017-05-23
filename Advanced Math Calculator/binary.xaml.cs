@@ -375,6 +375,33 @@ namespace Advanced_Math_Calculator
                     }
 
                 }
+                else if (inputType1.SelectedIndex == 2)
+                {//Hex mask
+                    if (input.Length == 1)//if there is only 1 char in inputReplace
+                    {
+                        if (input != "A" && input != "B" && input != "C" && input != "D" && input != "E" && input != "F" && !input.Any(char.IsDigit))// if its not num or ABCDEF
+                        {
+                            inputReplace = inputReplace.Replace(input, "");//replace it with nothing
+
+                            inputBox.Text = inputReplace;//set the output
+                            inputBox.SelectionStart = position - 1;//set the position
+                            break;
+                        }
+                        input = "";
+                        break;
+                    }
+                    if (input.Substring(0, 1) != "A" && input.Substring(0, 1) != "B" && input.Substring(0, 1) != "C" && input.Substring(0, 1) != "D" && input.Substring(0, 1) != "E" && input.Substring(0, 1) != "F" && !input.Substring(0, 1).Any(char.IsDigit)// if its not num or ABCDEF
+                    {
+                        inputReplace = inputReplace.Replace(input.Substring(0, 1), "");//replace the bad char with nothing
+                        inputBox.Text = inputReplace;
+                        inputBox.SelectionStart = position - 1;
+                    }
+                    if (input.Length != 1)
+                    {
+                        input = input.Substring(1, input.Length - 1);//removes first char to check the next***
+                    }
+
+                }
             }
         }
                
