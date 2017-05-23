@@ -237,6 +237,69 @@ namespace Advanced_Math_Calculator
                     {
                         outputBox.Text = inputBox.Text;
                     }
+                    //if input is binary
+                    else if(inputType1.SelectedIndex == 0){
+                        if(input.Length >= 4){
+                        string resultHEX = "";
+                        string inputFour = input.Substring(input.Length-4,4); //gets the last 4 bits
+                            switch (inputFour)
+                            {
+                                case "0000":
+                                    resultHEX = "0" + resultHEX;
+                                    break;
+                                case "0001":
+                                    resultHEX = "1" + resultHEX;
+                                    break;
+                                case "0010":
+                                    resultHEX = "2" + resultHEX;
+                                    break;
+                                case "0011":
+                                    resultHEX = "3" + resultHEX;
+                                    break;
+                                case "0100":
+                                    resultHEX = "4" + resultHEX;
+                                    break;
+                                case "0101":
+                                    resultHEX = "5" + resultHEX;
+                                    break;
+                                case "0110":
+                                    resultHEX = "6" + resultHEX;
+                                    break;
+                                case "0111":
+                                    resultHEX = "7" + resultHEX;
+                                    break;
+                                case "1000":
+                                    resultHEX = "8" + resultHEX;
+                                    break;
+                                case "1001":
+                                    resultHEX = "9" + resultHEX;
+                                    break;
+                                case "1010":
+                                    resultHEX = "A" + resultHEX;
+                                    break;
+                                case "1011":
+                                    resultHEX = "B" + resultHEX;
+                                    break;
+                                case "1100":
+                                    resultHEX = "C" + resultHEX;
+                                    break;
+                                case "1101":
+                                    resultHEX = "D" + resultHEX;
+                                    break;
+                                case "1110":
+                                    resultHEX = "E" + resultHEX;
+                                    break;
+                                case "1111":
+                                    resultHEX = "F" + resultHEX;
+                                    break;
+                            }
+                            input=input.Substring(0,input.Length - 4);
+                        }
+                        else{
+                            resultHEX =  + resultHex;
+                        }
+                        inputBox.Text = resultHEX;
+                    }
                 }
 
 
