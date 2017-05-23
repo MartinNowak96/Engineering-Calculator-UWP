@@ -2,7 +2,7 @@
   "dependencies": {
     "CrossPieCharts.UWP": "1.0.2",
     "InfragisticsUWP.Controls.Charts.XamDataChart": "2016.2.247",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
     "Microsoft.Toolkit.Uwp.UI.Controls": "1.4.1"
   },
   "frameworks": {

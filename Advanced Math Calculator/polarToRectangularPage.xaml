@@ -136,7 +136,7 @@
                                 <ColumnDefinition Width="50"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <!-- radial gauge 2-->
-                            <controls:RadialGauge 
+                            <controls:RadialGauge
                
                                   x:Name="RadialInput2"
                                   Grid.Column="1"
@@ -156,6 +156,7 @@
                                   ValueBrush="DarkGray" 
                                   NeedleWidth="3" 
                                   TickLength="11" NeedleBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedDisabled}"  TrailBrush="DarkGray" />
+                            
                         </Grid>
                     </Grid>
                 </controls:Expander>

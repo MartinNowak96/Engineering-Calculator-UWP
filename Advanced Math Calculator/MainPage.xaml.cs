@@ -50,6 +50,11 @@ namespace Advanced_Math_Calculator
                 selectionFrame.Navigate(typeof(polarToRectangularPage));
                 pageTitle.Text = "Polar/Rectangular";
             }
+            else if (BinaryHexOctal.IsSelected)
+            {
+                selectionFrame.Navigate(typeof(binary));
+                pageTitle.Text = "Binary/Octal/Hex";
+            }
 
         }
     }

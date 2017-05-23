@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="Advanced_Math_Calculator.binary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Advanced_Math_Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF232323" RequestedTheme="Dark">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+           
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="Conversions" FontSize="25" Grid.ColumnSpan="2"  HorizontalAlignment="Center"/>
+
+            <!--Input select -->
+            <ComboBox x:Name="inputType1" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"  Width="135" Header="Input Type" SelectedIndex="0" FontSize="18" Height="71" >
+                <ComboBoxItem x:Name="inputBinary" Content="Binary" Tapped="inputBinary_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="inputDecimal" Content="Decimal" Tapped="inputDecimal_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="inputHex" Content="Hex" Tapped="inputHex_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="inputOctal" Content="Octal" Tapped="inputOctal_Tapped"></ComboBoxItem>
+            </ComboBox>
+
+            <!--Swap Button-->
+            <Button x:Name="swapButton" Margin="0,30,0,0" Content="&#xE13C;" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="20" Tapped="swapButton_Tapped" />
+            
+            <!--Output select -->
+            <ComboBox x:Name="outputType1" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"  Width="135" Header="Output Type" SelectedIndex="0" FontSize="18" Height="71" >
+                <ComboBoxItem x:Name="outputBinary" Content="Binary" Tapped="outputBinary_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="outputDecimal" Content="Decimal" Tapped="outputDecimal_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="outputHex" Content="Hex" Tapped="outputHex_Tapped"></ComboBoxItem>
+                <ComboBoxItem x:Name="outputOctal" Content="Octal" Tapped="outputOctal_Tapped"></ComboBoxItem>
+            </ComboBox>
+
+          <!--Input output Box -->
+            <TextBox TextWrapping="Wrap" x:Name="inputBox" Grid.Row="2" Grid.ColumnSpan="2"  Text="" VerticalAlignment="Top" TextChanged="inputBox_TextChanged" FontSize="20" TextChanging="inputBox_TextChanging"/>
+            <TextBox Margin="0,2,0,0" x:Name="outputBox" Grid.Row="3" Grid.ColumnSpan="2"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" FontSize="20"/>
+
+
+            <TextBlock Text="Calculations" FontSize="25" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="4"/>
+        </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
