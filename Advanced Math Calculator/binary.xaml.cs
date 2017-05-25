@@ -212,7 +212,7 @@ namespace Advanced_Math_Calculator
                             total = total + (num * Math.Pow(10, i));
                             
                         }//end for
-                        outputBox.Text = total.ToString(###################,#0);
+                        outputBox.Text = total.ToString("###################,#0");
                     }
                 }
                 //if octal is result
