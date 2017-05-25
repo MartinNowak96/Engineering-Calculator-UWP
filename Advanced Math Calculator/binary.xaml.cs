@@ -42,10 +42,10 @@ namespace Advanced_Math_Calculator
         //decimal to binary dont work
         void calculate()
         {
-            string input = inputBox.Text;
+            string input = inputBox.Text.ToUpper();
             double total = 0;
             double midInput = 1;
-            int midInput1=0;
+            double midInput1=0;
 
 
 
@@ -75,14 +75,14 @@ namespace Advanced_Math_Calculator
 
                 }
                 //if binary is result
-                if (outputType1.SelectedIndex == 0)
+                else if (outputType1.SelectedIndex == 0)
                 {
                     //if input is binary
                     if(inputType1.SelectedIndex == 0){
                         outputBox.Text = inputBox.Text;   
                     }
                     //if input is hex
-                    if (inputType1.SelectedIndex == 2)
+                    else if (inputType1.SelectedIndex == 2)
                     {
                         string resultBinary = "";
                         while (input != "")
@@ -146,7 +146,7 @@ namespace Advanced_Math_Calculator
                         }
                     }
                     //if input is octal
-                    if (inputType1.SelectedIndex == 3)
+                    else if (inputType1.SelectedIndex == 3)
                     {
                         string resultBinary = "";
                         while (input != "")
@@ -185,19 +185,19 @@ namespace Advanced_Math_Calculator
                         }
                     }
                     //if input is decimal
-                    if (inputType1.SelectedIndex == 1)
+                    else if (inputType1.SelectedIndex == 1)
                     {
                         for (int i = 0; midInput != 0; i++)
                         {
                             if (i == 0)
                             {
                                 midInput = Convert.ToDouble(input) / 2;
-                                midInput1 = Convert.ToInt32(input) / 2;
+                                midInput1 = Math.Round(Convert.ToDouble(input) / 2);
                             }
                             else
                             {
                                 midInput = Convert.ToDouble(midInput1) / 2;
-                                midInput1 = Convert.ToInt32(midInput1) / 2;
+                                midInput1 = Math.Round(Convert.ToDouble(midInput1) / 2);
                                 
                             }
                             int num = 0;
@@ -216,7 +216,7 @@ namespace Advanced_Math_Calculator
                     }
                 }
                 //if octal is result
-                if (outputType1.SelectedIndex == 3)
+                else if (outputType1.SelectedIndex == 3)
                 {
                     //if input is octal
                     if (inputType1.SelectedIndex == 3)
@@ -230,7 +230,7 @@ namespace Advanced_Math_Calculator
                     }
                 }
                 //if HEX is result
-                if (outputType1.SelectedIndex == 2)
+                else if (outputType1.SelectedIndex == 2)
                 {
                     //if input is Hex
                     if (inputType1.SelectedIndex == 2)
@@ -239,66 +239,75 @@ namespace Advanced_Math_Calculator
                     }
                     //if input is binary
                     else if(inputType1.SelectedIndex == 0){
-                        if(input.Length >= 4){
                         string resultHEX = "";
-                        string inputFour = input.Substring(input.Length-4,4); //gets the last 4 bits
-                            switch (inputFour)
+                        while (input != "")
+                        {
+                            if (input.Length >= 4)
                             {
-                                case "0000":
-                                    resultHEX = "0" + resultHEX;
-                                    break;
-                                case "0001":
-                                    resultHEX = "1" + resultHEX;
-                                    break;
-                                case "0010":
-                                    resultHEX = "2" + resultHEX;
-                                    break;
-                                case "0011":
-                                    resultHEX = "3" + resultHEX;
-                                    break;
-                                case "0100":
-                                    resultHEX = "4" + resultHEX;
-                                    break;
-                                case "0101":
-                                    resultHEX = "5" + resultHEX;
-                                    break;
-                                case "0110":
-                                    resultHEX = "6" + resultHEX;
-                                    break;
-                                case "0111":
-                                    resultHEX = "7" + resultHEX;
-                                    break;
-                                case "1000":
-                                    resultHEX = "8" + resultHEX;
-                                    break;
-                                case "1001":
-                                    resultHEX = "9" + resultHEX;
-                                    break;
-                                case "1010":
-                                    resultHEX = "A" + resultHEX;
-                                    break;
-                                case "1011":
-                                    resultHEX = "B" + resultHEX;
-                                    break;
-                                case "1100":
-                                    resultHEX = "C" + resultHEX;
-                                    break;
-                                case "1101":
-                                    resultHEX = "D" + resultHEX;
-                                    break;
-                                case "1110":
-                                    resultHEX = "E" + resultHEX;
-                                    break;
-                                case "1111":
-                                    resultHEX = "F" + resultHEX;
-                                    break;
+
+                                string inputFour = input.Substring(input.Length - 4, 4); //gets the last 4 bits
+                                switch (inputFour)
+                                {
+                                    case "0000":
+                                        resultHEX = "0" + resultHEX;
+                                        break;
+                                    case "0001":
+                                        resultHEX = "1" + resultHEX;
+                                        break;
+                                    case "0010":
+                                        resultHEX = "2" + resultHEX;
+                                        break;
+                                    case "0011":
+                                        resultHEX = "3" + resultHEX;
+                                        break;
+                                    case "0100":
+                                        resultHEX = "4" + resultHEX;
+                                        break;
+                                    case "0101":
+                                        resultHEX = "5" + resultHEX;
+                                        break;
+                                    case "0110":
+                                        resultHEX = "6" + resultHEX;
+                                        break;
+                                    case "0111":
+                                        resultHEX = "7" + resultHEX;
+                                        break;
+                                    case "1000":
+                                        resultHEX = "8" + resultHEX;
+                                        break;
+                                    case "1001":
+                                        resultHEX = "9" + resultHEX;
+                                        break;
+                                    case "1010":
+                                        resultHEX = "A" + resultHEX;
+                                        break;
+                                    case "1011":
+                                        resultHEX = "B" + resultHEX;
+                                        break;
+                                    case "1100":
+                                        resultHEX = "C" + resultHEX;
+                                        break;
+                                    case "1101":
+                                        resultHEX = "D" + resultHEX;
+                                        break;
+                                    case "1110":
+                                        resultHEX = "E" + resultHEX;
+                                        break;
+                                    case "1111":
+                                        resultHEX = "F" + resultHEX;
+                                        break;
+                                }
+                                input = input.Substring(0, input.Length - 4);//removes last 4 bits
                             }
-                            input=input.Substring(0,input.Length - 4);
+                            else if (input != "")
+                            {
+                                while (input.Length < 4)
+                                {
+                                    input = "0" + input;
+                                }
+                            }
                         }
-                        else{
-                            resultHEX =  + resultHex;
-                        }
-                        inputBox.Text = resultHEX;
+                        outputBox.Text = resultHEX;
                     }
                 }
 
@@ -440,6 +449,11 @@ namespace Advanced_Math_Calculator
                 }
                 else if (inputType1.SelectedIndex == 2)
                 {//Hex mask
+                    
+                    input = input.ToUpper();
+                    inputReplace = input.ToUpper();
+
+
                     if (input.Length == 1)//if there is only 1 char in inputReplace
                     {
                         if (input != "A" && input != "B" && input != "C" && input != "D" && input != "E" && input != "F" && !input.Any(char.IsDigit))// if its not num or ABCDEF
@@ -453,7 +467,7 @@ namespace Advanced_Math_Calculator
                         input = "";
                         break;
                     }
-                    if (input.Substring(0, 1) != "A" && input.Substring(0, 1) != "B" && input.Substring(0, 1) != "C" && input.Substring(0, 1) != "D" && input.Substring(0, 1) != "E" && input.Substring(0, 1) != "F" && !input.Substring(0, 1).Any(char.IsDigit)// if its not num or ABCDEF
+                    if (input.Substring(0, 1) != "A" && input.Substring(0, 1) != "B" && input.Substring(0, 1) != "C" && input.Substring(0, 1) != "D" && input.Substring(0, 1) != "E" && input.Substring(0, 1) != "F" && !input.Substring(0, 1).Any(char.IsDigit))// if its not num or ABCDEF
                     {
                         inputReplace = inputReplace.Replace(input.Substring(0, 1), "");//replace the bad char with nothing
                         inputBox.Text = inputReplace;

@@ -6,11 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="#FF232323" RequestedTheme="Dark">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+    <ScrollViewer  VerticalScrollBarVisibility="Auto">
+        <Grid Background="#FF232323" RequestedTheme="Dark">
+        
            
-            <Grid>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -52,8 +52,9 @@
 
 
             <TextBlock Text="Calculations" FontSize="25" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="4"/>
-        </Grid>
-        </ScrollViewer>
+       
+        
 
     </Grid>
+    </ScrollViewer>
 </Page>
