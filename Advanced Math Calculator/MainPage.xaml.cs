@@ -27,35 +27,36 @@ namespace Advanced_Math_Calculator
             this.InitializeComponent();
         }
 
-        private void HambergurButton_Click(object sender, RoutedEventArgs e)
-        {
-            Hamberg_Menu.IsPaneOpen = !Hamberg_Menu.IsPaneOpen;
-        }
 
 
-        private void IconListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+
+        private void Hamberg_Menu_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            if (FunctionCalc1.IsSelected)
-            {
-                selectionFrame.Navigate(typeof(functionPage));
-                pageTitle.Text = "Function Calculator";
-            }
-            else if (settings.IsSelected)
+            if (args.IsSettingsInvoked)
             {
                 selectionFrame.Navigate(typeof(settingsPage));
-                pageTitle.Text = "Settings";
             }
-            else if (polarRectangular.IsSelected)
+            else
             {
-                selectionFrame.Navigate(typeof(polarToRectangularPage));
-                pageTitle.Text = "Polar/Rectangular";
-            }
-            else if (BinaryHexOctal.IsSelected)
-            {
-                selectionFrame.Navigate(typeof(binary));
-                pageTitle.Text = "Binary/Octal/Hex";
+                switch (args.InvokedItem)
+                {
+                    case "Polar/Rectangular":
+                        selectionFrame.Navigate(typeof(polarToRectangularPage));
+                        break;
+
+                    case "binary":
+                        selectionFrame.Navigate(typeof(binary));
+                        break;
+
+                    case "function":
+                        selectionFrame.Navigate(typeof(functionPage));
+                        break;
+                }
             }
 
+
         }
+
     }
 }

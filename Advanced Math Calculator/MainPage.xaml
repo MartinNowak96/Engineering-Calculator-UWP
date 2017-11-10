@@ -7,75 +7,88 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Black">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <AcrylicBrush x:Key="MyAcrylicBrush"
+                                   BackgroundSource="HostBackdrop"
+                                   TintColor="#212121"
+                                   TintOpacity="0.40"
+                                   FallbackColor="#363738" />
+                </ResourceDictionary>
+                <!--#212121-->
+                <ResourceDictionary x:Key="HighContrast">
+                    <SolidColorBrush x:Key="MyAcrylicBrush"
+                                      Color="{ThemeResource SystemColorWindowColor}" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <AcrylicBrush x:Key="MyAcrylicBrush"
+                                   BackgroundSource="HostBackdrop"
+                                   TintColor="#FFFF0000"
+                                   TintOpacity="0.4"
+                                   FallbackColor="#FFFF7F7F" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
 
 
-        <RelativePanel>
-            <Button x:Name="HambergurButton"  FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Background="Transparent" Foreground="White" Click="HambergurButton_Click" FontSize="26" RequestedTheme="Dark" BorderThickness="0" Margin="2,0,0,0"/>
-            <Button x:Name="Search" FontFamily="Segoe MDL2 Assets" Content="&#xE721;" Background="Transparent" Foreground="White"  FontSize="22" RequestedTheme="Dark" BorderThickness="0" Margin="2,0,0,0" RelativePanel.AlignRightWithPanel="True" />
-            <TextBlock x:Name="pageTitle" Text="Home" Margin="50,0,0,0" RelativePanel.AlignVerticalCenterWithPanel="True" Foreground="White" FontSize="22"></TextBlock>
-        </RelativePanel>
-
-        <SplitView x:Name="Hamberg_Menu" Grid.Row="1" IsPaneOpen="False" DisplayMode="CompactOverlay" CompactPaneLength="47" OpenPaneLength="250" RequestedTheme="Dark">
 
 
-            <SplitView.Pane>
-                <ListBox x:Name="IconListBox" SelectionMode ="Single" SelectionChanged="IconListBox_SelectionChanged" Background="Black" HorizontalAlignment="Left">
-                    <ListBoxItem x:Name="FunctionCalc1">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="function"  Text="f(x)"  Foreground="White" FontSize="22" RequestedTheme="Dark" HorizontalAlignment="Left" Margin="0,0,5,0"/>
-                            <TextBlock x:Name="FunctionCalc" VerticalAlignment="Center" Text="Function Calculator" Foreground="White" FontSize="20" />
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="graphinCalc">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="graphText"  Text="&#xE9D9;" FontFamily="Segoe MDL2 Assets"  Foreground="White" FontSize="29" RequestedTheme="Dark" Margin="0,0,5,0"  />
-                            <TextBlock x:Name="graphingcalculator" VerticalAlignment="Center" Text="Graphing Calculator" Foreground="White" FontSize="20" />
-                        </StackPanel>
-                    </ListBoxItem>
-                    
-                    <ListBoxItem x:Name="polarRectangular">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="polarShip"  Text="&#xE7E3;" FontFamily="Segoe MDL2 Assets"  Foreground="White" FontSize="29" RequestedTheme="Dark" Margin="0,0,5,0"  />
-                            <TextBlock x:Name="polarRect" VerticalAlignment="Center" Text="Rolar/Rectangular" Foreground="White" FontSize="20" />
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem x:Name="PrefixConversion">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="prefixBars"  Text="&#xE14B;" FontFamily="Segoe MDL2 Assets"  Foreground="White" FontSize="29" RequestedTheme="Dark" Margin="0,0,5,0"  />
-                            <TextBlock x:Name="prefixconversion" VerticalAlignment="Center" Text="Prefix Conversion" Foreground="White" FontSize="20" />
-                        </StackPanel>
-                    </ListBoxItem>
-                    
-                    <ListBoxItem x:Name="BinaryHexOctal">
-                        <StackPanel Orientation="Horizontal" Height="33">
-                            <TextBlock x:Name="binary"  Text="10"   Foreground="White" FontSize="27" RequestedTheme="Dark" Margin="0,0,5,0"  />
-                            <TextBlock x:Name="binaryHex" VerticalAlignment="Center" Text="Binary/Hex/Octal" Foreground="White" FontSize="20" />
-                        </StackPanel>
-                    </ListBoxItem>
 
-                    <ListBoxItem x:Name="settings">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
-                            <TextBlock x:Name="settingbutton"  Text="&#xE713;" FontFamily="Segoe MDL2 Assets" Foreground="White" FontSize="26" RequestedTheme="Dark" Margin="0,0,5,0"  />
-                            <TextBlock x:Name="settingstext" VerticalAlignment="Center" Text=" Settings" Foreground="White" FontSize="20" Margin="0" />
-                        </StackPanel>
-                    </ListBoxItem>
 
-                </ListBox>
 
-            </SplitView.Pane>
-            <SplitView.Content>
-                
-                
-                
+    <NavigationView x:FieldModifier="public" ItemInvoked="Hamberg_Menu_ItemInvoked"  x:Name="Hamberg_Menu" Grid.Row="1" IsPaneOpen="False" AlwaysShowHeader="False" CompactPaneLength="48" OpenPaneLength="225" Background="{ThemeResource MyAcrylicBrush}"  RequestedTheme="Dark">
 
-                <Frame x:Name="selectionFrame"></Frame>
-            </SplitView.Content>
-        </SplitView>
-    </Grid>
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home" Tag="home" >
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE10F;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+
+            <NavigationViewItem Content="Function Calculator" Tag="function">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="f(x)"></FontIcon>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Polar/Rectangular" Tag="polar">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE7E3;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="BinaryHexOctal" Tag="binary">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="10"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+        </NavigationView.MenuItems>
+
+        <!---<Grid Background="black" Opacity=".7" Canvas.ZIndex="-1"></Grid> -->
+
+
+
+
+
+
+        <Frame x:FieldModifier="public"  x:Name="selectionFrame">
+            <Frame.ContentTransitions>
+                <TransitionCollection>
+                    <NavigationThemeTransition/>
+                </TransitionCollection>
+            </Frame.ContentTransitions>
+        </Frame>
+
+        <!--<Image x:Name="backgroundImage" Source="Assets/Backgrounds/art5.jpg" Grid.Row="1"  Stretch="UniformToFill" HorizontalAlignment="Center" Canvas.ZIndex="-1"/> -->
+
+
+    </NavigationView>
+
+
+
 </Page>
+
