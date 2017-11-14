@@ -43,9 +43,9 @@
     <NavigationView x:FieldModifier="public" ItemInvoked="Hamberg_Menu_ItemInvoked"  x:Name="Hamberg_Menu" Grid.Row="1" IsPaneOpen="False" AlwaysShowHeader="False" CompactPaneLength="48" OpenPaneLength="225" Background="{ThemeResource MyAcrylicBrush}"  RequestedTheme="Dark">
 
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Home" Tag="home" >
+            <NavigationViewItem Content="555 Timer" Tag="555" >
                 <NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xE10F;"/>
+                    <FontIcon Glyph="&#xE916;"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
 

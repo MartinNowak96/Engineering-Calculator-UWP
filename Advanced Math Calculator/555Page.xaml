@@ -1,0 +1,167 @@
+﻿<Page
+    x:Class="Advanced_Math_Calculator._555Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Advanced_Math_Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Source="Assets/555.png" HorizontalAlignment="Center" Grid.RowSpan="5"  VerticalAlignment="Stretch" />
+
+
+            <StackPanel  Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+                <TextBox x:Name="R1"  Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanging="R1_TextChanging"/>
+                <ComboBox x:Name="R1Unit" SelectedIndex="1" >
+                    <ComboBoxItem Content="MΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="KΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="Ω" ></ComboBoxItem>
+                    <ComboBoxItem Content="mΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="µΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="nΩ" ></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2">
+
+                <TextBox x:Name="R2"  Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanging="R1_TextChanging" />
+                <ComboBox x:Name="R2Unit" SelectedIndex="1" >
+                    <ComboBoxItem Content="MΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="KΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="Ω" ></ComboBoxItem>
+                    <ComboBoxItem Content="mΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="µΩ" ></ComboBoxItem>
+                    <ComboBoxItem Content="nΩ" ></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+
+            <StackPanel  Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+                <TextBox x:Name="cap"  Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanging="R1_TextChanging" />
+                <ComboBox x:Name="capUnit" SelectedIndex="4">
+                    <ComboBoxItem Content="MF" ></ComboBoxItem>
+                    <ComboBoxItem Content="KF" ></ComboBoxItem>
+                    <ComboBoxItem Content="F" ></ComboBoxItem>
+                    <ComboBoxItem Content="mF" ></ComboBoxItem>
+                    <ComboBoxItem Content="µF" ></ComboBoxItem>
+                    <ComboBoxItem Content="nF" ></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+
+
+
+
+        </Grid>
+
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Frequency:" FontSize="25"/>
+                <TextBlock x:Name="frequency" FontSize="25"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock Text="Period: " FontSize="25" />
+                <TextBlock x:Name="period" FontSize="25"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Duty Cycle: " FontSize="25"/>
+                <TextBlock x:Name="duty" FontSize="25"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Time On: " FontSize="25"/>
+                <TextBlock x:Name="timeon" FontSize="25"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Time Off: " FontSize="25"/>
+                <TextBlock x:Name="timeoff" FontSize="25"/>
+            </StackPanel>
+
+
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition x:Name="top1" Width="*"/>
+                <ColumnDefinition x:Name="bottom1" Width="*"/>
+                <ColumnDefinition x:Name="top2" Width="*"/>
+                <ColumnDefinition x:Name="bottom2" Width="*"/>
+                <ColumnDefinition x:Name="top3" Width="*"/>
+                <ColumnDefinition x:Name="bottom3" Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="1" Fill="White" VerticalAlignment="Top" />
+            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="3" Fill="White" VerticalAlignment="Top" />
+            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="2" Fill="White" VerticalAlignment="Bottom" />
+            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="4" Fill="White" VerticalAlignment="Bottom" />
+            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="5" Fill="White" VerticalAlignment="Top" />
+            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="6" Fill="White" VerticalAlignment="Bottom" />
+
+            <Grid Grid.Column="1" BorderThickness="0,0,8,0" BorderBrush="White"/>
+            <Grid Grid.Column="2" BorderThickness="0,0,8,0" BorderBrush="White"/>
+            <Grid Grid.Column="3" BorderThickness="0,0,8,0" BorderBrush="White"/>
+            <Grid Grid.Column="4" BorderThickness="0,0,8,0" BorderBrush="White"/>
+            <Grid Grid.Column="5" BorderThickness="0,0,8,0" BorderBrush="White"/>
+        </Grid>
+
+
+
+
+
+        <Grid  Canvas.ZIndex="-1" Grid.Row="0">
+            <Grid.Background>
+                <SolidColorBrush Color="#FF444444" Opacity="0.8"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Canvas.ZIndex="-1" Grid.Row="1">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.7"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid  Canvas.ZIndex="-1" Grid.Row="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.7"/>
+            </Grid.Background>
+        </Grid>
+        <Grid  Canvas.ZIndex="-1" Grid.Row="3">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.7"/>
+            </Grid.Background>
+        </Grid>
+
+
+    </Grid>
+</Page>

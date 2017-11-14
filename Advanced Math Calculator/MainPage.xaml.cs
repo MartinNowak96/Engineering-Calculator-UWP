@@ -44,6 +44,9 @@ namespace Advanced_Math_Calculator
                     case "Polar/Rectangular":
                         selectionFrame.Navigate(typeof(polarToRectangularPage));
                         break;
+                    case "555 Timer":
+                        selectionFrame.Navigate(typeof(_555Page));
+                        break;
 
                     case "binary":
                         selectionFrame.Navigate(typeof(binary));
