@@ -99,6 +99,9 @@
     <Compile Include="binary.xaml.cs">
       <DependentUpon>binary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="circuitAnalysis.xaml.cs">
+      <DependentUpon>circuitAnalysis.xaml</DependentUpon>
+    </Compile>
     <Compile Include="functionPage.xaml.cs">
       <DependentUpon>functionPage.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="binary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="circuitAnalysis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

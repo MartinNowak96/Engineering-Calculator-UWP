@@ -10,7 +10,7 @@
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition MinHeight="175" Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="25"></RowDefinition>
         </Grid.RowDefinitions>
@@ -121,18 +121,18 @@
                 <ColumnDefinition x:Name="bottom3" Width="*"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="1" Fill="White" VerticalAlignment="Top" />
-            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="3" Fill="White" VerticalAlignment="Top" />
-            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="2" Fill="White" VerticalAlignment="Bottom" />
-            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="4" Fill="White" VerticalAlignment="Bottom" />
-            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="5" Fill="White" VerticalAlignment="Top" />
-            <Rectangle HorizontalAlignment="Stretch" Height="8" Grid.Column="6" Fill="White" VerticalAlignment="Bottom" />
+            <Rectangle HorizontalAlignment="Stretch" Height="7" Grid.Column="1" Fill="White" VerticalAlignment="Top" />
+            <Rectangle HorizontalAlignment="Stretch" Height="7" Grid.Column="3" Fill="White" VerticalAlignment="Top" />
+            <Rectangle HorizontalAlignment="Stretch" Height="7" Grid.Column="2" Fill="White" VerticalAlignment="Bottom" />
+            <Rectangle HorizontalAlignment="Stretch" Height="7" Grid.Column="4" Fill="White" VerticalAlignment="Bottom" />
+            <Rectangle HorizontalAlignment="Stretch" Height="7" Grid.Column="5" Fill="White" VerticalAlignment="Top" />
+            <Rectangle HorizontalAlignment="Stretch" Height="7" Grid.Column="6" Fill="White" VerticalAlignment="Bottom" />
 
-            <Grid Grid.Column="1" BorderThickness="0,0,8,0" BorderBrush="White"/>
-            <Grid Grid.Column="2" BorderThickness="0,0,8,0" BorderBrush="White"/>
-            <Grid Grid.Column="3" BorderThickness="0,0,8,0" BorderBrush="White"/>
-            <Grid Grid.Column="4" BorderThickness="0,0,8,0" BorderBrush="White"/>
-            <Grid Grid.Column="5" BorderThickness="0,0,8,0" BorderBrush="White"/>
+            <Grid Grid.Column="1" BorderThickness="0,0,7,0" BorderBrush="White"/>
+            <Grid Grid.Column="2" BorderThickness="0,0,7,0" BorderBrush="White"/>
+            <Grid Grid.Column="3" BorderThickness="0,0,7,0" BorderBrush="White"/>
+            <Grid Grid.Column="4" BorderThickness="0,0,7,0" BorderBrush="White"/>
+            <Grid Grid.Column="5" BorderThickness="0,0,7,0" BorderBrush="White"/>
         </Grid>
 
 

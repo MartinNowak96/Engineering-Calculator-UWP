@@ -54,15 +54,16 @@ namespace Advanced_Math_Calculator
                     timeoff.Text = findTime(timeOff);
                     timeon.Text = findTime(timeOn);
 
+                    double duty1 = Math.Round(timeOn / periodVar, 4);
 
-                    top1.Width = new GridLength(timeOn, GridUnitType.Star);
-                    top2.Width = new GridLength(timeOn, GridUnitType.Star);
-                    top3.Width = new GridLength(timeOn, GridUnitType.Star);
+                    top1.Width = new GridLength(duty1, GridUnitType.Star);
+                    top2.Width = new GridLength(duty1, GridUnitType.Star);
+                    top3.Width = new GridLength(duty1, GridUnitType.Star);
 
 
-                    bottom1.Width = new GridLength(timeOff, GridUnitType.Star);
-                    bottom2.Width = new GridLength(timeOff, GridUnitType.Star);
-                    bottom3.Width = new GridLength(timeOff, GridUnitType.Star);
+                    bottom1.Width = new GridLength((1-duty1), GridUnitType.Star);
+                    bottom2.Width = new GridLength((1 - duty1), GridUnitType.Star);
+                    bottom3.Width = new GridLength((1 - duty1), GridUnitType.Star);
                 }
                 catch { }
                }
