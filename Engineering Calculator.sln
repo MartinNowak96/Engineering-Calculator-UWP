@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced Math Calculator", "Advanced Math Calculator\Advanced Math Calculator.csproj", "{115CE08C-7461-4091-9D82-40BDC6F067AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engineering Calculator", "Advanced Math Calculator\Engineering Calculator.csproj", "{115CE08C-7461-4091-9D82-40BDC6F067AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

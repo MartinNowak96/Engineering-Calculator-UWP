@@ -7,8 +7,8 @@
     <ProjectGuid>{115CE08C-7461-4091-9D82-40BDC6F067AE}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Advanced_Math_Calculator</RootNamespace>
-    <AssemblyName>Advanced Math Calculator</AssemblyName>
+    <RootNamespace>Engineering_Math_Calculator</RootNamespace>
+    <AssemblyName>Engineering Calculator</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>

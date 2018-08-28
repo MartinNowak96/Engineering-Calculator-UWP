@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Advanced_Math_Calculator
+namespace Engineering_Math_Calculator
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -48,11 +48,11 @@ namespace Advanced_Math_Calculator
                         selectionFrame.Navigate(typeof(_555Page));
                         break;
 
-                    case "binary":
+                    case "BinaryHexOctal":
                         selectionFrame.Navigate(typeof(binary));
                         break;
 
-                    case "function":
+                    case "Function Calculator":
                         selectionFrame.Navigate(typeof(functionPage));
                         break;
                 }

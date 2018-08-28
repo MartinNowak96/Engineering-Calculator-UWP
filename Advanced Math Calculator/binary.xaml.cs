@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Advanced_Math_Calculator
+namespace Engineering_Math_Calculator
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -308,6 +308,10 @@ namespace Advanced_Math_Calculator
                             }
                         }
                         outputBox.Text = resultHEX;
+                    }
+                    else if(inputType1.SelectedIndex == 1)
+                    {
+                        outputBox.Text = String.Format("{0:X}", Convert.ToUInt64(inputBox.Text));
                     }
                 }
 
